@@ -49,7 +49,7 @@ class Application(models.Model):
         related_name='applications'
     )
 
-    resume = models.FileField(upload_to='resumes/')
+    resume = models.FileField(upload_to='resumes/', null=True, blank=True)
     cover_letter = models.TextField(blank=True, null=True)
 
     status = models.CharField(
