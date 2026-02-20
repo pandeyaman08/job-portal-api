@@ -1,15 +1,41 @@
+# =========================
 # Virtual Environment
+# =========================
 venv/
+env/
+ENV/
 
-# Python cache
+# =========================
+# Python Cache Files
+# =========================
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# SQLite database
+# =========================
+# Django Files
+# =========================
 db.sqlite3
+*.log
+media/
 
-# Mac system files
+# =========================
+# Environment Variables (Security)
+# =========================
+.env
+
+# =========================
+# VS Code Settings (Optional)
+# =========================
+.vscode/
+
+# =========================
+# Mac System Files (IMPORTANT for Mac)
+# =========================
 .DS_Store
 
-# Environment variables
-.env
+# =========================
+# OS & Misc
+# =========================
+Thumbs.db
