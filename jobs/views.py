@@ -1,3 +1,4 @@
+from rest_framework import filters
 from rest_framework import generics, permissions
 from .models import Job, Application
 from .serializers import JobSerializer, ApplicationSerializer
@@ -6,6 +7,10 @@ class JobListView(generics.ListAPIView):
     queryset = Job.objects.filter(is_active=True).order_by('-created_at')
     serializer_class = JobSerializer
     permission_classes = [permissions.AllowAny]
+
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    search_fields = ['title', 'location', 'company_name']
+    ordering_fields = ['created_at', 'salary']
 
 class JobDetailView(generics.RetrieveAPIView):
     queryset = Job.objects.filter(is_active=True)
